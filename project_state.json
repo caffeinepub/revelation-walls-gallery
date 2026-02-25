@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "An app that embeds https://t3knologic.github.io/revelation-walls-gallery/ in an iframe. The app is for Revelation Walls Murals and NFTs painted at the Dfinity Foundation, commissioned by Dominic Williams and painted by Candace Marquette. Built by T3kNo-Logic.xyz.",
+  "architectural_notes": [
+    "App is a simple iframe wrapper for https://t3knologic.github.io/revelation-walls-gallery/",
+    "Source repo: https://github.com/T3knoLogic/revelation-walls-gallery.git",
+    "Branding: Revelation Walls Murals & NFTs, Dfinity Foundation, commissioned by Dominic Williams, painted by Candace Marquette, built by T3kNo-Logic.xyz"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Abstract mural-inspired hero banner with warm golds, deep blacks, and vivid paint splashes evoking large-scale wall art (revelation-walls-banner.dim_1200x120.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-full-page-iframe-that-embeds-https-t3knologic-github-io-revelation-walls-gallery-as-the-primary-content-of-the-app-filling-the-entire-viewport",
+      "title": "Create a full-page iframe that embeds https://t3knologic.github.io/revelation-walls-gallery/ as the primary content of the app, filling the entire viewport.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-minimal-branded-header-or-footer-bar-that-displays-the-app-context-revelation-walls-murals-nfts-at-the-dfinity-foundation-commissioned-by-dominic-williams-painted-by-candace-marquette-built-by-t3kno-logic-xyz-this-bar-must-be-non-intrusive-and-not-obscure-the-gallery-content",
+      "title": "Add a minimal branded header or footer bar that displays the app context: 'Revelation Walls – Murals & NFTs at the Dfinity Foundation | Commissioned by Dominic Williams | Painted by Candace Marquette | Built by T3kNo-Logic.xyz'. This bar must be non-intrusive and not obscure the gallery content.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-gallery-focused-visual-theme-with-a-dark-background-strong-typographic-hierarchy-and-accent-colors-inspired-by-mural-art-warm-golds-deep-blacks-and-rich-accent-tones-enforce-this-style-consistently-across-the-branded-bar-and-any-surrounding-ui-elements",
+      "title": "Apply a bold, gallery-focused visual theme with a dark background, strong typographic hierarchy, and accent colors inspired by mural art (warm golds, deep blacks, and rich accent tones). Enforce this style consistently across the branded bar and any surrounding UI elements.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Embed https://t3knologic.github.io/revelation-walls-gallery/ in a full-page iframe",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Revelation Walls Gallery",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Root app component that renders the BrandedBar header and a full-viewport iframe embedding the Revelation Walls gallery at https://t3knologic.github.io/revelation-walls-gallery/.",
+  "frontend/src/components/BrandedBar.tsx": "Slim fixed header bar displaying the Revelation Walls title, attribution credits (Dominic Williams, Candace Marquette, Dfinity Foundation), builder link (T3kNo-Logic.xyz), and caffeine.ai footer with a decorative banner image background.",
+  "frontend/src/index.css": "Global stylesheet with a dark art-gallery aesthetic using OKLCH warm gold/amber tokens, Cinzel display font, full-viewport layout rules for the gallery shell and iframe, and all branded bar styles.",
+  "frontend/tailwind.config.js": "Extended Tailwind config adding Cinzel/Inter font families, gold and amber color tokens, gold glow box shadows, and a shimmer keyframe animation for the gallery theme."
+}

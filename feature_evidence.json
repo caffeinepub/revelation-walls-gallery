@@ -1,0 +1,62 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-full-page-iframe-that-embeds-https-t3knologic-github-io-revelation-walls-gallery-as-the-primary-content-of-the-app-filling-the-entire-viewport",
+      "featureTitle": "Create a full-page iframe that embeds https://t3knologic.github.io/revelation-walls-gallery/ as the primary content of the app, filling the entire viewport.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-minimal-branded-header-or-footer-bar-that-displays-the-app-context-revelation-walls-murals-nfts-at-the-dfinity-foundation-commissioned-by-dominic-williams-painted-by-candace-marquette-built-by-t3kno-logic-xyz-this-bar-must-be-non-intrusive-and-not-obscure-the-gallery-content",
+      "featureTitle": "Add a minimal branded header or footer bar that displays the app context: 'Revelation Walls – Murals & NFTs at the Dfinity Foundation | Commissioned by Dominic Williams | Painted by Candace Marquette | Built by T3kNo-Logic.xyz'. This bar must be non-intrusive and not obscure the gallery content.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BrandedBar.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-bold-gallery-focused-visual-theme-with-a-dark-background-strong-typographic-hierarchy-and-accent-colors-inspired-by-mural-art-warm-golds-deep-blacks-and-rich-accent-tones-enforce-this-style-consistently-across-the-branded-bar-and-any-surrounding-ui-elements",
+      "featureTitle": "Apply a bold, gallery-focused visual theme with a dark background, strong typographic hierarchy, and accent colors inspired by mural art (warm golds, deep blacks, and rich accent tones). Enforce this style consistently across the branded bar and any surrounding UI elements.",
+      "files": [
+        "frontend/src/components/BrandedBar.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
