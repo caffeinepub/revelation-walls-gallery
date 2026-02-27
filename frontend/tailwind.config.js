@@ -15,10 +15,6 @@ export default {
             }
         },
         extend: {
-            fontFamily: {
-                display: ['Cinzel', 'Georgia', 'serif'],
-                body: ['Inter', 'system-ui', 'sans-serif'],
-            },
             colors: {
                 border: 'oklch(var(--border))',
                 input: 'oklch(var(--input))',
@@ -53,16 +49,6 @@ export default {
                     DEFAULT: 'oklch(var(--card))',
                     foreground: 'oklch(var(--card-foreground))'
                 },
-                gold: {
-                    DEFAULT: 'oklch(0.78 0.14 75)',
-                    light: 'oklch(0.88 0.12 82)',
-                    dark: 'oklch(0.60 0.14 68)',
-                },
-                amber: {
-                    DEFAULT: 'oklch(0.68 0.18 55)',
-                    light: 'oklch(0.78 0.16 62)',
-                    dark: 'oklch(0.52 0.16 45)',
-                },
                 chart: {
                     1: 'oklch(var(--chart-1))',
                     2: 'oklch(var(--chart-2))',
@@ -87,9 +73,7 @@ export default {
                 sm: 'calc(var(--radius) - 4px)'
             },
             boxShadow: {
-                xs: '0 1px 2px 0 rgba(0,0,0,0.05)',
-                gold: '0 0 16px oklch(0.78 0.14 75 / 0.4)',
-                'gold-sm': '0 0 8px oklch(0.78 0.14 75 / 0.3)',
+                xs: '0 1px 2px 0 rgba(0,0,0,0.05)'
             },
             keyframes: {
                 'accordion-down': {
@@ -99,16 +83,11 @@ export default {
                 'accordion-up': {
                     from: { height: 'var(--radix-accordion-content-height)' },
                     to: { height: '0' }
-                },
-                'shimmer': {
-                    '0%': { backgroundPosition: '-200% center' },
-                    '100%': { backgroundPosition: '200% center' },
                 }
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out',
-                'shimmer': 'shimmer 3s linear infinite',
+                'accordion-up': 'accordion-up 0.2s ease-out'
             }
         }
     },

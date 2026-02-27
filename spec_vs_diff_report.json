@@ -1,19 +1,19 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-25T04:41:48.858Z",
-  "summary": "All three core requirements (REQ-1, REQ-2, REQ-3) are implemented in the diff. The iframe is embedded with the correct src, the branded bar displays all required attribution text, and the dark gallery theme with warm gold/amber accents is applied. One minor hallucinated feature is present: a caffeine.ai attribution link added to the branded bar, which was not requested.",
+  "generatedAt": "2026-02-27T09:55:57.213Z",
+  "summary": "The diff implements REQ-4 comprehensively. The iframe uses position:fixed, inset:0, width:100vw, height:100dvh. The html/body/#root reset in index.css removes margin, padding, and sets overflow:hidden. The branded bar is a fixed overlay that does not reduce iframe height. The viewport meta includes viewport-fit=cover for iPhone notch support. All acceptance criteria appear to be addressed.",
   "missing_requirements": [],
   "hallucinated_features": [
     {
-      "description": "A 'Built with love using caffeine.ai' link pointing to caffeine.ai with UTM parameters was added to the branded bar.",
-      "reason": "The build request only specifies attribution text for the mural project, commissioner, artist, and app builder (T3kNo-Logic.xyz). No caffeine.ai branding or link was requested.",
+      "description": "Credits panel with project information triggered by an info button",
+      "reason": "The build request only asks for fixing the full-screen layout and keeping the branded bar visible. It does not request a credits panel or info button interaction.",
       "evidence": [
-        "frontend/src/components/BrandedBar.tsx"
+        "frontend/src/App.tsx"
       ]
     }
   ],
-  "confidence": 0.92,
+  "confidence": 0.82,
   "changed_files": [
     "all_files_summary.json",
     "backend/main.mo",
@@ -21,7 +21,6 @@
     "frontend/index.css",
     "frontend/index.html",
     "frontend/src/App.tsx",
-    "frontend/src/components/BrandedBar.tsx",
     "frontend/src/hooks/useActor.ts",
     "frontend/src/hooks/useInternetIdentity.ts",
     "frontend/src/index.css",

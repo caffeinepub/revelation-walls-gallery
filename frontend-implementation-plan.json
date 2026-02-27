@@ -1,68 +1,29 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Revelation Walls Gallery iframe App",
+  "title": "Fix iframe to fill full screen on mobile",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Create a full-page iframe embedding the Revelation Walls gallery",
+      "id": "REQ-4",
+      "summary": "Make the embedded iframe fill the entire mobile viewport with no gaps or scrollbars, while keeping the branded bar visible as an overlay",
       "acceptanceCriteria": [
-        "The iframe src is set to https://t3knologic.github.io/revelation-walls-gallery/",
-        "The iframe fills the full viewport width and height with no visible scrollbars on the outer page",
-        "The iframe has no border or padding around it"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Replace the existing App content with a full-viewport iframe component that embeds https://t3knologic.github.io/revelation-walls-gallery/. The iframe must fill 100% of the available viewport space with no border, padding, or margin. Set appropriate sandbox and allow attributes for third-party iframe embedding."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Add a minimal branded header or footer bar with attribution text",
-      "acceptanceCriteria": [
-        "A slim bar is visible that credits the mural project, commissioner, artist, and app builder",
-        "The bar does not overlap or cover the iframe gallery content",
-        "All attribution text is legible"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/BrandedBar.tsx",
-          "operation": "create",
-          "description": "Create a minimal branded bar component that displays 'Revelation Walls – Murals & NFTs at the Dfinity Foundation | Commissioned by Dominic Williams | Painted by Candace Marquette | Built by T3kNo-Logic.xyz'. This component should be a slim, non-intrusive bar with typography optimized for readability against a dark background. Include the generated banner image frontend/public/assets/generated/revelation-walls-banner.dim_1200x120.png as a background or inline image to enhance the branding."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire the BrandedBar component into the App layout. Position it as a fixed header or footer so it does not obscure the iframe gallery content. Adjust the iframe layout to account for the bar's height, ensuring the iframe fills the remaining viewport space."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Apply a bold, gallery-focused visual theme with dark background and warm accent colors",
-      "acceptanceCriteria": [
-        "The page background and branded bar use a dark color palette with warm accent colors",
-        "Typography is bold and legible against the dark background",
-        "The visual style feels cohesive with a mural/art gallery aesthetic"
+        "On a mobile device (iOS and Android), the iframe fills the entire screen edge-to-edge with no visible gaps or blank areas.",
+        "The html, body, and all wrapper/container elements have no default margin, padding, or height restrictions that would constrain the iframe.",
+        "The iframe uses position: fixed and covers 100vw × 100dvh (or 100vh fallback), starting from inset: 0.",
+        "The branded bar is overlaid on top of the iframe without reducing the iframe's height.",
+        "No horizontal or vertical scrollbars appear outside the iframe on the host page.",
+        "The layout works correctly on iPhone (with notch/dynamic island) and Android devices."
       ],
       "file_operations": [
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Update the global stylesheet to apply a dark background (deep black or charcoal) and warm accent colors (golds, amber, bronze). Define bold typography styles with strong hierarchy for headings and body text that are legible against dark backgrounds. Ensure these styles create a cohesive mural/art gallery aesthetic."
+          "description": "Reset html and body to fill the entire viewport with no margin, padding, or overflow. Apply position: fixed, width: 100vw, height: 100vh with 100dvh fallback, inset: 0, and overflow: hidden to ensure the page container fills the full screen on mobile devices."
         },
         {
-          "path": "frontend/tailwind.config.js",
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Extend the Tailwind theme with custom color variables for the gallery-focused palette: dark background tones (deep blacks), warm accent colors (golds, rich ambers), and any additional mural-inspired accent tones. Configure typography settings to enforce bold font weights and strong hierarchy."
-        },
-        {
-          "path": "frontend/src/components/BrandedBar.tsx",
-          "operation": "modify",
-          "description": "Apply the gallery-focused theme to the BrandedBar component using the custom Tailwind utilities and global styles. Ensure the bar uses dark background colors, warm accent highlights, and bold legible typography consistent with the mural aesthetic."
+          "description": "Restructure the App component layout to make the iframe fill the entire viewport using position: fixed, inset: 0, width: 100vw, and height: 100dvh (with 100vh fallback). Position the branded bar (containing the banner frontend/public/assets/generated/revelation-walls-banner.dim_1200x120.png) absolutely or fixed on top of the iframe as an overlay without reducing the iframe's height. Remove any wrapper containers or CSS that constrain the iframe's dimensions. Ensure no scrollbars appear on the host page."
         }
       ]
     }

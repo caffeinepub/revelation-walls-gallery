@@ -1,15 +1,14 @@
 {
-  "backend/main.mo": "Empty Motoko actor serving as the backend canister placeholder with no implemented methods.",
-  "feature_evidence.json": "Feature evidence report mapping three implemented features (full-page iframe, branded bar, gallery visual theme) to their source files, components, and test IDs with high confidence.",
-  "frontend-file-summaries.txt": "JSON document providing one-sentence summaries of each frontend source file for build planning reference.",
-  "frontend/index.css": "Base Tailwind CSS file defining light and dark OKLCH CSS custom properties for the shadcn-ui design token system.",
-  "frontend/index.html": "HTML entry point titled 'Revelation Walls Gallery' that mounts the React app into a root div and loads main.tsx as a module.",
-  "frontend/src/App.tsx": "Root React component that renders the BrandedBar header above a full-viewport iframe embedding the Revelation Walls gallery.",
-  "frontend/src/components/BrandedBar.tsx": "Fixed header bar displaying the Revelation Walls title, attribution credits (Dominic Williams, Candace Marquette, Dfinity Foundation), a builder link, and a caffeine.ai footer with a decorative background image.",
-  "frontend/src/hooks/useActor.ts": "Custom React hook that creates and caches an authenticated or anonymous ICP backend actor using React Query, invalidating dependent queries when the identity changes.",
-  "frontend/src/hooks/useInternetIdentity.ts": "Custom hook and context provider that manages Internet Identity authentication state, exposing login/logout functions and identity status via an AuthClient.",
-  "frontend/src/index.css": "Global stylesheet defining the dark art-gallery visual theme with OKLCH gold/amber tokens, Cinzel font, full-viewport layout rules for the gallery shell and iframe, and all branded bar styles.",
-  "frontend/src/main.tsx": "React app entry point that wraps the App component with QueryClientProvider and InternetIdentityProvider before mounting to the DOM.",
-  "frontend/tailwind.config.js": "Tailwind CSS configuration for the frontend, extending the default theme with custom fonts (Cinzel, Inter), OKLCH-based color tokens (gold, amber, sidebar, chart), border radii, box shadows, and keyframe animations, plus plugins for typography, container queries, and animate.",
-  "project_state.json": "Project state descriptor for the Revelation Walls Gallery app, recording its version, architecture (full-page iframe wrapper for a GitHub Pages gallery), branding details, existing features, and a pending feature request to embed the gallery."
+  "backend/main.mo": "Empty Motoko actor serving as the backend canister placeholder with no methods defined.",
+  "feature_evidence.json": "Feature evidence report documenting that the full-screen iframe implementation (using fixed positioning, 100vw/100dvh, and overlay branded bar) is implemented in App.tsx and index.css with high confidence.",
+  "frontend-file-summaries.txt": "JSON-formatted summaries of the three main frontend files describing their roles in the full-screen gallery iframe app.",
+  "frontend/index.css": "Tailwind base CSS with light/dark OKLCH color variable definitions for a default shadcn-style theme, without full-screen reset styles.",
+  "frontend/index.html": "HTML entry point for the Revelation Walls Gallery app with full viewport-fit=cover meta tags, Apple mobile web app settings, and favicon links.",
+  "frontend/src/App.tsx": "Main React component rendering a full-screen fixed iframe embedding the Revelation Walls gallery, with a fixed overlay branded bar at the bottom and a slide-up credits panel toggled by an info button.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and caches an ICP backend actor using React Query, supporting both anonymous and authenticated (Internet Identity) actors, and invalidates dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "React context provider and hook for Internet Identity authentication, managing AuthClient lifecycle, login/logout state, and persisting identity across page reloads.",
+  "frontend/src/index.css": "Global CSS with a dark gallery theme using warm gold OKLCH variables, and a critical full-screen reset setting html/body/#root to 100% height with overflow hidden and no margin/padding.",
+  "frontend/src/main.tsx": "React app entry point that mounts the App component wrapped with QueryClientProvider and InternetIdentityProvider into the root DOM element.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the default theme with OKLCH-based color tokens, custom border radius, accordion animations, and plugins for typography, container queries, and animate.",
+  "project_state.json": "Tracks project state (version 5) for a Revelation Walls gallery app that embeds an iframe, documenting features, known issues (mobile full-screen layout), architectural notes, and fix requests."
 }

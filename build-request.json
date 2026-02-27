@@ -1,75 +1,43 @@
 {
   "kind": "build_request",
-  "title": "Revelation Walls Gallery iframe App",
-  "projectName": "Revelation Walls Gallery",
-  "priority": "normal",
+  "title": "Fix iframe to fill full screen on mobile",
+  "projectName": "Revelation Walls",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a full-page iframe that embeds https://t3knologic.github.io/revelation-walls-gallery/ as the primary content of the app, filling the entire viewport.",
+      "id": "REQ-4",
+      "text": "Ensure the embedded iframe fills the entire screen on mobile devices. The root app container, all wrapper elements, and the iframe itself must expand to cover 100% of the visible viewport with no gaps, scrollbars, or unused whitespace. Use CSS techniques such as `position: fixed`, `width: 100vw`, `height: 100vh` (with `100dvh` as a fallback for dynamic viewport), `inset: 0`, and `overflow: hidden` on the html/body and all container elements to eliminate any small or constrained window appearance. The branded bar must remain visible but must not reduce the iframe's height — use absolute or fixed positioning for the bar overlaid on the iframe so the iframe still occupies the full viewport behind it.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-latest"
         ],
         "quotes": [
-          "build an app with an iframe for https://t3knologic.github.io/revelation-walls-gallery/"
+          "It only shows a small environment window. I need it to be full screen."
         ]
       },
       "acceptanceCriteria": [
-        "The iframe src is set to https://t3knologic.github.io/revelation-walls-gallery/",
-        "The iframe fills the full viewport width and height with no visible scrollbars on the outer page",
-        "The iframe has no border or padding around it"
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Add a minimal branded header or footer bar that displays the app context: 'Revelation Walls – Murals & NFTs at the Dfinity Foundation | Commissioned by Dominic Williams | Painted by Candace Marquette | Built by T3kNo-Logic.xyz'. This bar must be non-intrusive and not obscure the gallery content.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "This is for the Revelation Walls Murals and NFTs painted at the Dfinity Foundation commissioned by Dominic Williams and painted by Candace Marquette. App built by T3kNo-Logic.xyz."
-        ]
-      },
-      "acceptanceCriteria": [
-        "A slim bar is visible that credits the mural project, commissioner, artist, and app builder",
-        "The bar does not overlap or cover the iframe gallery content",
-        "All attribution text is legible"
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Apply a bold, gallery-focused visual theme with a dark background, strong typographic hierarchy, and accent colors inspired by mural art (warm golds, deep blacks, and rich accent tones). Enforce this style consistently across the branded bar and any surrounding UI elements.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The page background and branded bar use a dark color palette with warm accent colors",
-        "Typography is bold and legible against the dark background",
-        "The visual style feels cohesive with a mural/art gallery aesthetic"
+        "On a mobile device (iOS and Android), the iframe fills the entire screen edge-to-edge with no visible gaps or blank areas.",
+        "The html, body, and all wrapper/container elements have no default margin, padding, or height restrictions that would constrain the iframe.",
+        "The iframe uses position: fixed and covers 100vw × 100dvh (or 100vh fallback), starting from inset: 0.",
+        "The branded bar is overlaid on top of the iframe without reducing the iframe's height.",
+        "No horizontal or vertical scrollbars appear outside the iframe on the host page.",
+        "The layout works correctly on iPhone (with notch/dynamic island) and Android devices."
       ]
     }
   ],
   "constraints": [
-    "The iframe src must be exactly https://t3knologic.github.io/revelation-walls-gallery/ — do not alter or proxy the URL",
-    "No backend logic is needed; this is a purely frontend app"
+    "Do not remove or hide the branded bar — it must remain visible overlaid on top of the iframe.",
+    "Do not change the embedded URL: https://t3knologic.github.io/revelation-walls-gallery/",
+    "Do not modify files under frontend/src/hooks/ or frontend/src/components/ui."
   ],
   "nonGoals": [
-    "Modifying or hosting the gallery source code from https://github.com/T3knoLogic/revelation-walls-gallery.git",
-    "Authentication or user accounts",
-    "NFT minting or blockchain interaction",
-    "Any content management for the gallery itself"
+    "Changing the visual theme or brand colors.",
+    "Adding new features or content beyond fixing the full-screen layout.",
+    "Backend changes."
   ],
   "imageRequirements": {
-    "required": [
-      "Abstract mural-inspired hero banner with warm golds, deep blacks, and vivid paint splashes evoking large-scale wall art (revelation-walls-banner.dim_1200x120.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }

@@ -1,15 +1,17 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 5,
   "summary": "An app that embeds https://t3knologic.github.io/revelation-walls-gallery/ in an iframe. The app is for Revelation Walls Murals and NFTs painted at the Dfinity Foundation, commissioned by Dominic Williams and painted by Candace Marquette. Built by T3kNo-Logic.xyz.",
   "architectural_notes": [
     "App is a simple iframe wrapper for https://t3knologic.github.io/revelation-walls-gallery/",
     "Source repo: https://github.com/T3knoLogic/revelation-walls-gallery.git",
-    "Branding: Revelation Walls Murals & NFTs, Dfinity Foundation, commissioned by Dominic Williams, painted by Candace Marquette, built by T3kNo-Logic.xyz"
+    "Branding: Revelation Walls Murals & NFTs, Dfinity Foundation, commissioned by Dominic Williams, painted by Candace Marquette, built by T3kNo-Logic.xyz",
+    "Known layout issue: iframe/app container not filling full screen on mobile; must use 100dvh, width:100vw, no margins/padding on html/body/container"
   ],
-  "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Abstract mural-inspired hero banner with warm golds, deep blacks, and vivid paint splashes evoking large-scale wall art (revelation-walls-banner.dim_1200x120.png)",
+  "known_issues": [
+    "App shows a small window instead of full screen on mobile — full-screen layout fix is in progress"
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-full-page-iframe-that-embeds-https-t3knologic-github-io-revelation-walls-gallery-as-the-primary-content-of-the-app-filling-the-entire-viewport",
@@ -32,6 +34,14 @@
       "title": "Apply a bold, gallery-focused visual theme with a dark background, strong typographic hierarchy, and accent colors inspired by mural art (warm golds, deep blacks, and rich accent tones). Enforce this style consistently across the branded bar and any surrounding UI elements.",
       "reqIds": [
         "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-embedded-iframe-fills-the-entire-screen-on-mobile-devices-the-root-app-container-all-wrapper-elements-and-the-iframe-itself-must-expand-to-cover-100-of-the-visible-viewport-with-no-gaps-scrollbars-or-unused-whitespace-use-css-techniques-such-as-position-fixed-width-100vw-height-100vh-with-100dvh-as-a-fallback-for-dynamic-viewport-inset-0-and-overflow-hidden-on-the-html-body-and-all-container-elements-to-eliminate-any-small-or-constrained-window-appearance-the-branded-bar-must-remain-visible-but-must-not-reduce-the-iframe-s-height-use-absolute-or-fixed-positioning-for-the-bar-overlaid-on-the-iframe-so-the-iframe-still-occupies-the-full-viewport-behind-it",
+      "title": "Ensure the embedded iframe fills the entire screen on mobile devices. The root app container, all wrapper elements, and the iframe itself must expand to cover 100% of the visible viewport with no gaps, scrollbars, or unused whitespace. Use CSS techniques such as `position: fixed`, `width: 100vw`, `height: 100vh` (with `100dvh` as a fallback for dynamic viewport), `inset: 0`, and `overflow: hidden` on the html/body and all container elements to eliminate any small or constrained window appearance. The branded bar must remain visible but must not reduce the iframe's height — use absolute or fixed positioning for the bar overlaid on the iframe so the iframe still occupies the full viewport behind it.",
+      "reqIds": [
+        "REQ-4"
       ],
       "version": 1
     }
