@@ -310,7 +310,6 @@
 
 /* ─── Responsive: mobile-friendly bar layout ─────────────────────────────────── */
 @media (max-width: 768px) {
-  /* Keep fixed 48px bar — never go taller on mobile */
   :root {
     --bar-height: 48px;
   }
@@ -323,15 +322,19 @@
     flex-direction: row;
     align-items: center;
     padding: 0 0.75rem;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
-  /* Hide attribution credits entirely on mobile to save space */
+  /* Compress credits on mobile */
   .branded-bar-credits {
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .branded-bar-subtitle {
     display: none;
   }
 
-  /* Hide caffeine link and divider next to it */
   .caffeine-link {
     display: none;
   }
@@ -342,7 +345,7 @@
 }
 
 @media (max-width: 480px) {
-  .branded-bar-subtitle {
+  .branded-bar-credits {
     display: none;
   }
 }
